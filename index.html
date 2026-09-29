@@ -3,9 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Scoreboard - Monika</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello keerthana</h1>
+    <header>
+        <h1>Quiz Scoreboard</h1>
+        <p>Track players, scores & ranks</p>
+    </header>
+
+    <main>
+        <section class="controls-grid">
+            <!-- Add Form -->
+            <div class="card form-card">
+                <h2>Add Player Score</h2>
+                <form id="scoreForm">
+                    <label for="playerName">Player Name</label>
+                    <input type="text" id="playerName" placeholder="Ex: Monika" required>
+                    
+                    <label for="playerScore">Score</label>
+                    <input type="number" id="playerScore" placeholder="Ex: 85" min="0" required>
+                    
+                    <button type="submit">Add Score</button>
+                </form>
+            </div>
+
+            <div class="card filter-card">
+                <h2>Manage</h2>
+                <label for="searchPlayer">Search Player</label>
+                <input type="text" id="searchPlayer" placeholder="Search by name...">
+                
+                <label for="sortOption">Sort By</label>
+                <select id="sortOption">
+                    <option value="high">High to Low Score</option>
+                    <option value="low">Low to High Score</option>
+                    <option value="name">Name A-Z</option>
+                </select>
+                <button id="clearBtn" class="secondary">Clear All Data</button>
+            </div>
+        </section>
+
+        <section class="board-section">
+            <h2>Leaderboard</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player Name</th>
+                            <th>Score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                   
+                    </tbody>
+                </table>
+                <p id="emptyMsg">No players yet. Add one!</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
